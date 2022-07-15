@@ -21,7 +21,10 @@ public class Exercise2 {
 
 
     public <T extends Comparable<T>> boolean bstIguales(BST<T> a1, BST<T> a2){
-
+     if(arbol.preOrder().equals(arbol2.preOrder())){
+        return true
+        
+    }
         return false;
     }
 }

@@ -18,8 +18,27 @@ public class Exercise3 {
     }
 
 
-    public <T extends Comparable<T>> boolean bstEstrictamenteBinario(BST<T> a){
+   public boolean EstrictamenteBinario() {
+    return(EstrictamenteBinario(this.root));
+  }
 
-        return false;
+  
+  protected boolean EstrictamenteBinario(Node<E> actual) {
+    boolean res;
+
+    if(actual == null){
+      return true;
     }
+    else if (!(actual.left == null) && !(actual.right == null)){
+      System.out.println(!(actual.left == null) && !(actual.right == null));
+      res = (EstrictamenteBinario(actual.left) && EstrictamenteBinario(actual.right));
+    }
+    else if (actual.left == null && actual.right == null){
+      res = true;
+    }
+    else{
+      res = false;
+    }
+    return res;
+  
 }
